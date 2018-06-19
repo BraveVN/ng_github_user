@@ -8,9 +8,21 @@ angular
     function($routeProvider) {
       $routeProvider.when('/person', {
         templateUrl: 'components/Person/person.html',
-        controller: 'PersonCtrl'
+        controller: 'PersonCtrl',
+        controllerAs: '$ctrl'
       });
     }
   ])
 
-  .controller('PersonCtrl', [function() {}]);
+  .controller('PersonCtrl', PersonCtrl);
+
+PersonCtrl.$inject = ['ShareDataServices'];
+
+function PersonCtrl(ShareDataServices) {
+  const $ctrl = this;
+  $ctrl.user;
+
+  $ctrl.init = () => {
+    $ctrl.user = ShareDataServices.get();
+  }
+}

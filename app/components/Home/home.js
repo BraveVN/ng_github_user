@@ -16,9 +16,9 @@ angular
 
   .controller('HomeCtrl', HomeCtrl);
 
-HomeCtrl.$inject = ['$q', 'UserServices'];
+HomeCtrl.$inject = ['UserServices', 'ShareDataServices', '$location'];
 
-function HomeCtrl($q, UserServices) {
+function HomeCtrl(UserServices, ShareDataServices, $location) {
   const topFive = ['GrahamCampbell', 'fabpot', 'weierophinney', 'rkh', 'josh'];
 
   const $ctrl = this;
@@ -32,4 +32,9 @@ function HomeCtrl($q, UserServices) {
       });
     }
   };
+
+  $ctrl.gotoDetail = user => {
+    ShareDataServices.set(user);
+    $location.path('/person');
+  }
 }

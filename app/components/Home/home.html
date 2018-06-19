@@ -2,6 +2,6 @@
   <h2>Top 5 Github users</h2>
   <h4>Click the username to see more information.</h4>
   <div ng-repeat="user in $ctrl.usersData track by $index">
-    <button>{{ user.name }}</button>
+    <button ng-click="$ctrl.gotoDetail(user)">{{ user.name }}</button>
   </div>
 </div>

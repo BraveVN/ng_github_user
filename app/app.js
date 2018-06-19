@@ -5,7 +5,8 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.home',
   'myApp.person',
-  'myApp.user'
+  'myApp.user',
+  'myApp.shareData'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');

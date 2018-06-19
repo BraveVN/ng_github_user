@@ -1,5 +1,9 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<div ng-init="$ctrl.init()">
+  <h2>Person</h2>
+
+  <img ng-src="{{ $ctrl.user.avatar_url }}" alt="">
+
+  <h2>{{ $ctrl.user.name }}</h2>
+
+  <h3>{{ $ctrl.user.location }}</h3>
+</div>
