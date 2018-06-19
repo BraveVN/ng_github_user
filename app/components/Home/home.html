@@ -1,0 +1,7 @@
+<div ng-init="$ctrl.init()" ng-cloak>
+  <h2>Top 5 Github users</h2>
+  <h4>Click the username to see more information.</h4>
+  <div ng-repeat="user in $ctrl.usersData track by $index">
+    <button>{{ user.name }}</button>
+  </div>
+</div>
